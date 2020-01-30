@@ -15,18 +15,24 @@ switch($_GET["action"]){
             //print_r($_SESSION["cart_item"]);
             //是否cart session 
             if(!empty($_SESSION["cart_item"])){
-                
+
+
+                $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
 
             }else{
 
 
-
+                $_SESSION["cart_item"] = $itemArray;
             }
         }
     break;
     case "remove":
 
     break;
+    case "empty":
+        
+		unset($_SESSION["cart_item"]);
+	break;	
 }
 $product_array = $db_handle->runQuery("SELECT * FROM tblproduct ORDER BY id ASC");
 
