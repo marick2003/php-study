@@ -1,6 +1,9 @@
 <?php
 
   include_once('simpleCMS.php');
+   $obj2=new SimpleClass();
+   echo $obj2->var . "\n";
+   $obj2->displayVar();
    $obj = new simpleCMS();
    $obj->host = 'localhost';
    $obj->username = 'root';
@@ -8,9 +11,9 @@
    $obj->table = 'list';
    $obj->connect();
 
-   if ( $_POST )
-     $obj->write($_POST);
-   echo ( $_GET['admin'] == 1 ) ? $obj->display_admin() : $obj->display_public();
+  //  if ( $_POST )
+  //    $obj->write($_POST);
+  //  echo ( $_GET['admin'] == 1 ) ? $obj->display_admin() : $obj->display_public();
 
 // $servername = "127.0.0.1";
 // $username = "root";
