@@ -1,5 +1,5 @@
 <?php 
-
+//localhost
 $db['db_host']="127.0.0.1";
 $db['db_user']="root";
 $db['db_pass']="123456";
