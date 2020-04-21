@@ -8,9 +8,13 @@ $db['db_db']="cms";
 foreach($db as $key =>$value){
     define(strtoupper($key),$value);
 }
-
 $connection = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_DB);
-if($connection){
-    echo "Connected!";
+// if($connection){
+//     echo "Connected!";
+// }
+
+if(mysqli_connect_errno($connection)){
+
+    echo "connect error";
 }
 ?>
