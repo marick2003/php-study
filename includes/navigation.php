@@ -17,6 +17,7 @@
 
                     <?php 
                         $query= "SELECT * FROM category";
+                        //針對資料庫查詢
                         $select_all_category_query=mysqli_query($connection,$query);
                         while($row = mysqli_fetch_assoc($select_all_category_query)){
                             $cat_title=$row["cat_title"];
