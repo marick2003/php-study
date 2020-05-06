@@ -35,11 +35,12 @@ include "./includes/navigation.php";
                         $num +=1;
                     }
                     $string = json_encode($row, JSON_UNESCAPED_UNICODE);
-                    $length = count($string);
+
+                    /*$length = count($string);*/
                     /*$length = strlen($string); */
-                    echo "{$length}";
+                    echo ($row);
                     /* 當頁數 */
-                    if($length > 0 ){
+                    if($num > 0 ){
                         echo "<ul class='pager'>
                                 <li class='previous'>
                                     <a href='#'>&larr; Older</a>
