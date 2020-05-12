@@ -131,6 +131,9 @@
                         <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
                     </li>
                     <li>
+                        <a href="./category.php"><i class="fa fa-fw fa-edit"></i>Category</a>
+                    </li>
+                    <li>
                         <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
                     </li>
                     <li>
@@ -147,7 +150,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
                     </li>
                     <li>

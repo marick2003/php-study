@@ -20,7 +20,6 @@ session_start();
         <input type="hidden" name="form_submitted" value="1" />
 
         <input type="submit" value="Submit">
-
     </form>
 </body>
 </html>
