@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2020-04-23 12:17:39
+-- 產生時間： 2020-05-12 12:04:32
 -- 伺服器版本： 10.4.6-MariaDB
 -- PHP 版本： 7.3.8
 
@@ -49,7 +49,7 @@ INSERT INTO `category` (`cat_id`, `cat_title`) VALUES
 --
 
 CREATE TABLE `posts` (
-  `post_id` varchar(3) NOT NULL,
+  `post_id` int(3) NOT NULL,
   `post_category_id` int(3) NOT NULL,
   `post_title` varchar(255) NOT NULL,
   `post_author` varchar(255) NOT NULL,
@@ -59,6 +59,57 @@ CREATE TABLE `posts` (
   `post_tags` varchar(255) NOT NULL,
   `post_comment_count` int(3) NOT NULL,
   `post_status` varchar(255) NOT NULL DEFAULT 'draft'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- 傾印資料表的資料 `posts`
+--
+
+INSERT INTO `posts` (`post_id`, `post_category_id`, `post_title`, `post_author`, `post_date`, `post_image`, `post_content`, `post_tags`, `post_comment_count`, `post_status`) VALUES
+(1, 2, 'test1', 'rick', '2020-04-28', '', 'test1test1test1test1test1test1', 'javascript', 0, 'draft'),
+(2, 2, 'test1', 'rick', '2020-04-28', '', 'test1test1test1test1test1test1', 'javascript', 0, 'draft'),
+(3, 3, 'ab1', 'rick', '2020-05-06', '', 'test1test1test1test1test1test1', 'bootstrap', 0, 'draft');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `products`
+--
+
+CREATE TABLE `products` (
+  `product_id` int(22) NOT NULL,
+  `product_name` varchar(22) NOT NULL,
+  `product_price` int(22) NOT NULL,
+  `product_cat` varchar(22) NOT NULL,
+  `product_details` varchar(22) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `sales_stats`
+--
+
+CREATE TABLE `sales_stats` (
+  `id` int(22) NOT NULL,
+  `sales` int(22) NOT NULL,
+  `month` varchar(25) NOT NULL,
+  `pending_orders` int(55) NOT NULL,
+  `revenue` int(55) NOT NULL,
+  `Vistors` int(55) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -86,6 +137,12 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `category`
   MODIFY `cat_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `post_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
